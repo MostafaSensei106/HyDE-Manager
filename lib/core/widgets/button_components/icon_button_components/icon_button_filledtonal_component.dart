@@ -17,6 +17,16 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
   });
 
   @override
+  /// Builds an [IconButton] with a filled tonal style and a rounded rectangle
+  /// shape. The button displays an icon and responds to taps by calling
+  /// [onPressed] and vibrating the device. The appearance of the button is
+  /// determined by the [color] and [useInBorderRadius] properties.
+  ///
+  /// The [color] is used to set the background color of the button.
+  ///
+  /// The [useInBorderRadius] property determines whether to use the
+  /// [AppConstants.inBorderRadius] or [AppConstants.outBorderRadius] border
+  /// radius for the button.
   Widget build(BuildContext context) {
     return IconButton.filledTonal(
       icon: Icon(icon),

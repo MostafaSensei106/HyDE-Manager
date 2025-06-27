@@ -11,6 +11,11 @@ class IconButtonComponent extends StatelessWidget {
   });
 
   @override
+/// Builds an [IconButton] widget that displays an icon and
+/// responds to taps by calling [onPressed] and providing haptic
+/// feedback. The button's appearance is determined by the [icon]
+/// property.
+
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(icon),

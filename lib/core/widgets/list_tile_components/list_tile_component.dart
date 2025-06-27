@@ -58,7 +58,7 @@ class ListTileWidgetComponent extends StatelessWidget {
   /// Builds a [Container] widget with a [Column] containing a [Material]
   /// widget wrapping a [ListTile]. The appearance and behavior of the
   /// [ListTile] are determined by the provided parameters. It includes
-  /// customizable [leading], [title], [subtitle], and [trailing] widgets.
+  /// customizable [title], [subtitle], and [trailing] widgets.
   /// The [onTap] callback is triggered when the [InkWell] is tapped.
   /// The border radius is configured based on the [groupType] and
   /// [useinBorderRadius] properties, and the background color is set
