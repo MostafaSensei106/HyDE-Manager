@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 import 'package:hydemanager/core/config/constants/app_enums.dart';
@@ -79,7 +80,10 @@ class ListTileWidgetComponent extends StatelessWidget {
           Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: onTap,
+              onTap: () {
+                HapticFeedback.vibrate();
+                onTap!();
+              },
               borderRadius: borderRadius,
               child: ListTile(
                 leading: leading is IconData
