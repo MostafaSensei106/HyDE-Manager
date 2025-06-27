@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Material, Colors;
+import 'package:flutter/widgets.dart';
 import 'package:hydemanager/core/widgets/lottie_component/lottie_component.dart';
 
 void errorScreen() {

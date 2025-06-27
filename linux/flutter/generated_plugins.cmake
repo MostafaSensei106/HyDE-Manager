@@ -6,7 +6,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   bitsdojo_window_linux
   flutter_localization
   screen_retriever_linux
-  tray_manager
   url_launcher_linux
   window_manager
 )
