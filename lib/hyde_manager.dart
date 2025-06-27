@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
+import 'package:hydemanager/core/routing/app_router.dart';
+import 'package:hydemanager/core/routing/routes.dart';
 
 class HyDEManager extends StatelessWidget {
-  const HyDEManager({super.key});
+  final AppRouter appRouter = AppRouter();
+  HyDEManager(AppRouter appRouter, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +13,9 @@ class HyDEManager extends StatelessWidget {
       title: AppConstants.appName,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      // navigatorKey:,
-      // initialRoute:,
-      // onGenerateRoute:,
+      navigatorKey: AppRouter.navigatorKey,
+      initialRoute: Routes.mainPage,
+      onGenerateRoute: appRouter.generateRoute,
       themeAnimationCurve: Curves.easeInOutCirc,
       debugShowCheckedModeBanner: false,
       locale: const Locale('en', 'US'),
