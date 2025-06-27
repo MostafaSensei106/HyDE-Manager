@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hydemanager/core/constants/app_constants.dart';
+import 'package:hydemanager/core/config/constants/app_constants.dart';
 
 class HyDEManager extends StatelessWidget {
   const HyDEManager({super.key});
