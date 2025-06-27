@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hydemanager/core/error/no_routes_error.dart';
 import 'package:hydemanager/core/routing/routes.dart';
+import 'package:hydemanager/features/page/main/ui/page/main_page.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> navigatorKey =
