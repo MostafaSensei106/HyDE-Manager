@@ -3,18 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 
-class ButtonCompnent extends StatelessWidget {
+class ElevatedButtonIconComponent extends StatelessWidget {
   final String label;
-  final IconData icon;
   final void Function() onPressed;
   final bool isEnabled;
   final bool useMargin;
   final bool useInBorderRadius;
 
-  const ButtonCompnent({
+  const ElevatedButtonIconComponent({
     super.key,
     required this.label,
-    required this.icon,
     required this.onPressed,
     this.isEnabled = true,
     this.useMargin = false,
@@ -27,39 +25,16 @@ class ButtonCompnent extends StatelessWidget {
   }
 
   @override
-  /// Returns a [SizedBox] widget with a [ElevatedButton.icon] widget as child.
-  /// The [ElevatedButton.icon] widget is configured with the given properties.
-  ///
-  /// The [ElevatedButton.icon] widget is fully enabled if [isEnabled] is true,
-  /// otherwise it is disabled.
-  ///
-  /// The [ElevatedButton.icon] widget has a rounded border with the
-  /// [SenseiConst.inBorderRadius] radius, and an elevation of 2.
-  ///
-  /// The button is filled with the [Theme.of(context).colorScheme.primaryContainer]
-  /// color and has a foreground color of
-  /// [Theme.of(context).colorScheme.onPrimaryContainer].
-  ///
-  /// The button icon is filled with the [Theme.of(context).colorScheme.onPrimaryContainer]
-  /// color and has a size of [SenseiConst.iconSize].
-  ///
-  /// The button label is filled with the [Theme.of(context).colorScheme.onPrimaryContainer]
-  /// color and has a size of [SenseiConst.iconSize].
-  ///
-  /// When the button is disabled, the background color is set to
-  /// [Theme.of(context).colorScheme.error], the foreground color is set to
-  /// [Theme.of(context).colorScheme.onError], and the icon color is set to
-  /// [Theme.of(context).colorScheme.onError].
-  ///
-  /// The button has a padding of [SenseiConst.padding] around it, and an enabled
-  /// mouse cursor.
+  /// Builds a [Container] widget containing an [ElevatedButton.icon] with customizable
+  /// properties. The button's appearance and behavior depend on the provided parameters:
+  /// [isEnabled] determines if the button is active or disabled, [useMargin] adds a top margin,
+  /// and [useInBorderRadius] controls the border radius. The button displays an icon and a
+  /// label, with styling based on the current theme's color scheme.
   Widget build(BuildContext context) {
     return Container(
       margin: useMargin ? EdgeInsets.only(top: AppConstants.margin.h) : null,
-      child: ElevatedButton.icon(
+      child: ElevatedButton(
         onPressed: isEnabled ? onTap : null,
-        icon: Icon(icon, size: AppConstants.iconSize),
-        label: Text(label),
         style: ElevatedButton.styleFrom(
           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
           foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -77,6 +52,7 @@ class ButtonCompnent extends StatelessWidget {
           enableFeedback: true,
           enabledMouseCursor: WidgetStateMouseCursor.clickable,
         ),
+        child: Text(label),
       ),
     );
   }
