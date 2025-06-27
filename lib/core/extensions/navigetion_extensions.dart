@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 extension NavigationExtension on BuildContext {
   /// Push the route with the given [routeName] onto the navigator that most
@@ -28,8 +28,9 @@ extension NavigationExtension on BuildContext {
   /// return value is null unless the removed route was popped with [Navigator.pop]
   /// (e.g. by pressing the back button on Android).
   Future<dynamic> pushReplaceNamed(String routeName, {Object? arguments}) {
-    return Navigator.of(this)
-        .pushReplacementNamed(routeName, arguments: arguments);
+    return Navigator.of(
+      this,
+    ).pushReplacementNamed(routeName, arguments: arguments);
   }
 
   /// Push the route with the given [routeName] onto the navigator that most
@@ -45,10 +46,14 @@ extension NavigationExtension on BuildContext {
   /// with; this route cannot interact with the route below itself, and the
   /// return value is null unless the removed route was popped with [Navigator.pop]
   /// (e.g. by pressing the back button on Android).
-  Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {Object? arguments, required RoutePredicate predicate}) {
-    return Navigator.of(this)
-        .pushNamedAndRemoveUntil(routeName, predicate, arguments: arguments);
+  Future<dynamic> pushNamedAndRemoveUntil(
+    String routeName, {
+    Object? arguments,
+    required RoutePredicate predicate,
+  }) {
+    return Navigator.of(
+      this,
+    ).pushNamedAndRemoveUntil(routeName, predicate, arguments: arguments);
   }
 
   void pop() => Navigator.of(this).pop();

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show ColorScheme, Theme;
+import 'package:flutter/widgets.dart';
 import 'package:hydemanager/core/error/no_routes_error.dart';
 import 'package:hydemanager/core/routing/routes.dart';
 import 'package:hydemanager/features/page/main/ui/page/main_page.dart';

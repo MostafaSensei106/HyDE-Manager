@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Divider, Theme;
+import 'package:flutter/widgets.dart';
 
 class FullAppDividerComponents extends StatelessWidget {
   const FullAppDividerComponents({super.key});

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show MaterialApp, ThemeData;
+import 'package:flutter/widgets.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 import 'package:hydemanager/core/routing/app_router.dart';
 import 'package:hydemanager/core/routing/routes.dart';

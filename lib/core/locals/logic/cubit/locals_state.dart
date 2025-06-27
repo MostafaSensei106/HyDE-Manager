@@ -1,5 +1,5 @@
 // import 'package:equatable/equatable.dart';
-// import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 
 // class LanguageState extends Equatable {
 //   final Locale? locale;
