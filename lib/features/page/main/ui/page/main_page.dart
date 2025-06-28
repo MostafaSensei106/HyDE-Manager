@@ -1,15 +1,22 @@
+import 'dart:io';
 
-import 'package:flutter/material.dart' show Scaffold, AppBar;
-import 'package:flutter/widgets.dart' show StatelessWidget, BuildContext, Widget, Text;
+import 'package:flutter/material.dart' show Scaffold, Drawer;
+import 'package:flutter/widgets.dart'
+    show StatelessWidget, BuildContext, Widget;
+import 'package:hydemanager/core/widgets/app_bar_component/app_bar.dart';
+
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+   const MainPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Main Page'),),
-
+      appBar: HyDEAppBar(
+        title: 'Hello ${Platform.environment['USER']?.substring(0, 1).toUpperCase()}${Platform.environment['USER']?.substring(1) ?? ''}',
+      ),
+      drawer: const Drawer(),
     );
-}
+  }
 }
