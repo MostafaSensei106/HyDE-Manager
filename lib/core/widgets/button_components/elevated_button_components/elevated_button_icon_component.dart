@@ -47,7 +47,7 @@ class ElevatedButtonIconComponent extends StatelessWidget {
           disabledForegroundColor: Theme.of(context).colorScheme.onError,
           iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
           disabledIconColor: Theme.of(context).colorScheme.onError,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           shape: RoundedRectangleBorder(
             borderRadius: useInBorderRadius
                 ? BorderRadius.circular(AppConstants.inBorderRadius)

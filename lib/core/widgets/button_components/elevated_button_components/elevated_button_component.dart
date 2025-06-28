@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 
-class ElevatedButtonIconComponent extends StatelessWidget {
+class ElevatedButtonComponent extends StatelessWidget {
   final String label;
   final void Function() onPressed;
   final bool isEnabled;
   final bool useMargin;
   final bool useInBorderRadius;
 
-  const ElevatedButtonIconComponent({
+  const ElevatedButtonComponent({
     super.key,
     required this.label,
     required this.onPressed,
@@ -43,7 +43,7 @@ class ElevatedButtonIconComponent extends StatelessWidget {
           disabledForegroundColor: Theme.of(context).colorScheme.onError,
           iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
           disabledIconColor: Theme.of(context).colorScheme.onError,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           shape: RoundedRectangleBorder(
             borderRadius: useInBorderRadius
                 ? BorderRadius.circular(AppConstants.inBorderRadius)

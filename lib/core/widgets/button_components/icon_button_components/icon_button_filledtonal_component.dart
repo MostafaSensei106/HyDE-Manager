@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart' show IconButton, ButtonStyle;
+import 'package:flutter/material.dart' show IconButton, ButtonStyle, Theme;
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 
 class IconButtonFilledTonalComponent extends StatelessWidget {
   final bool useInBorderRadius;
-  final Color color;
+  final Color? color;
 
   final IconData icon;
   final VoidCallback onPressed;
   const IconButtonFilledTonalComponent({
     super.key,
     this.useInBorderRadius = false,
-    required this.color,
+     this.color,
     required this.icon,
     required this.onPressed,
   });
@@ -36,7 +36,7 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
         onPressed();
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(color),
+        backgroundColor: WidgetStateProperty.all<Color>(color ?? Theme.of(context).colorScheme.primary),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: useInBorderRadius
