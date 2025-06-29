@@ -12,7 +12,7 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
   const IconButtonFilledTonalComponent({
     super.key,
     this.useInBorderRadius = false,
-     this.color,
+    this.color,
     required this.icon,
     required this.onPressed,
   });
@@ -36,7 +36,9 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
         onPressed();
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(color ?? Theme.of(context).colorScheme.primary),
+        backgroundColor: WidgetStateProperty.all<Color>(
+          color ?? Theme.of(context).colorScheme.primary,
+        ),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: useInBorderRadius

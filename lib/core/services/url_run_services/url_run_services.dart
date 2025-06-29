@@ -2,7 +2,6 @@ import 'package:hydemanager/core/widgets/app_toast/app_toast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UrlRunServices {
-  
   /// A function to launch a URL.
   ///
   /// It takes a [String] which is the URL to be launched.

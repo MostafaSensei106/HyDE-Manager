@@ -1,7 +1,20 @@
-
-import 'package:flutter/material.dart' show kToolbarHeight, AppBar, Theme, Icons, IconButton;
+import 'package:flutter/material.dart'
+    show kToolbarHeight, AppBar, Theme, Icons, IconButton;
 import 'package:flutter/services.dart' show HapticFeedback;
-import 'package:flutter/widgets.dart' show StatelessWidget, PreferredSizeWidget, Size, BuildContext, Widget, IconData, EdgeInsets, Navigator, Text, BorderRadius, RoundedRectangleBorder, Icon;
+import 'package:flutter/widgets.dart'
+    show
+        StatelessWidget,
+        PreferredSizeWidget,
+        Size,
+        BuildContext,
+        Widget,
+        IconData,
+        EdgeInsets,
+        Navigator,
+        Text,
+        BorderRadius,
+        RoundedRectangleBorder,
+        Icon;
 import 'package:hydemanager/core/config/constants/app_constants.dart';
 
 class SidePageAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,26 +31,27 @@ class SidePageAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// Navigate back in the app by calling [Navigator.pop] on the given [context], and
   /// trigger a haptic feedback with [HapticFeedback.vibrate].
-  void leave( BuildContext context) {
+  void leave(BuildContext context) {
     HapticFeedback.vibrate();
     Navigator.pop(context);
   }
 
   @override
-
   /// Returns an [AppBar] widget with a centered title and a leading widget that is a left
   /// arrow icon. When the icon is tapped, it triggers the [leave] function to navigate back in
   /// the app. The [AppBar] has no elevation and a white background.
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      foregroundColor:Theme.of(context).colorScheme.onSurface,
+      foregroundColor: Theme.of(context).colorScheme.onSurface,
       title: Text(title),
       centerTitle: true,
       forceMaterialTransparency: true,
       leading: useBackButton
           ? _buildSidePageAppBarIcon(
-              context, Icons.keyboard_double_arrow_right_rounded)
+              context,
+              Icons.keyboard_double_arrow_right_rounded,
+            )
           : null,
     );
   }
@@ -62,10 +76,7 @@ class SidePageAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.all(4),
       ),
       onPressed: () => leave(context),
-      icon: Icon(
-        icon,
-        size: AppConstants.iconSize,
-      ),
+      icon: Icon(icon, size: AppConstants.iconSize),
       color: Theme.of(context).colorScheme.onSurface,
     );
   }

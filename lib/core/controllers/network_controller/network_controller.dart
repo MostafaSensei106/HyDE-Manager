@@ -1,4 +1,3 @@
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class NetworkController {
@@ -23,8 +22,8 @@ class NetworkController {
   /// or not. If the device is connected to the internet, the method returns
   /// [true], otherwise it returns [false].
   Future<bool> checkConnection() async {
-    final List<ConnectivityResult> connectivityResult =
-        await (Connectivity().checkConnectivity());
+    final List<ConnectivityResult> connectivityResult = await (Connectivity()
+        .checkConnectivity());
     if (connectivityResult.contains(ConnectivityResult.none)) {
       return false;
     }
@@ -38,7 +37,6 @@ class NetworkController {
   /// بالانترنت'.
   void _updateConnectionStatus(ConnectivityResult result) async {
     switch (result) {
-      
       case ConnectivityResult.wifi:
         //AppToast.showToast('الجهاز متصل بالواي فاي');
         break;

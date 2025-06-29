@@ -20,7 +20,7 @@ class AppRouter {
     Widget page;
     switch (settings.name) {
       case Routes.mainPage:
-        page =  MainPage();
+        page = MainPage();
         break;
 
       default:
