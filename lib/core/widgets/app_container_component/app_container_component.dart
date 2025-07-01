@@ -7,17 +7,16 @@ import 'package:flutter/widgets.dart'
         Container,
         BoxDecoration,
         BorderRadius;
-import 'package:hydemanager/core/config/constants/app_constants.dart'
+import '../../config/constants/app_constants.dart'
     show AppConstants;
 
 class AppContainerComponent extends StatelessWidget {
-  final Widget child;
-  final bool useInBorderRadius;
   const AppContainerComponent({
-    super.key,
-    required this.child,
+    required this.child, super.key,
     this.useInBorderRadius = false,
   });
+  final Widget child;
+  final bool useInBorderRadius;
 
   @override
   /// Returns a [Container] widget with the given properties.
@@ -30,8 +29,7 @@ class AppContainerComponent extends StatelessWidget {
   /// [useInBorderRadius] property.
   ///
   /// The [child] is passed as-is.
-  Widget build(BuildContext context) {
-    return Container(
+  Widget build(final BuildContext context) => Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: useInBorderRadius
@@ -40,5 +38,4 @@ class AppContainerComponent extends StatelessWidget {
       ),
       child: child,
     );
-  }
 }

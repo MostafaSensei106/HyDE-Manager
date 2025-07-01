@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart' show ElevatedButton, Theme;
-import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
+
+import '../../../config/constants/app_constants.dart';
 
 class ElevatedButtonComponent extends StatelessWidget {
+
+  const ElevatedButtonComponent({
+    required this.label, required this.onPressed, super.key,
+    this.isEnabled = true,
+    this.useMargin = false,
+    this.useInBorderRadius = false,
+  });
   final String label;
   final void Function() onPressed;
   final bool isEnabled;
   final bool useMargin;
   final bool useInBorderRadius;
-
-  const ElevatedButtonComponent({
-    super.key,
-    required this.label,
-    required this.onPressed,
-    this.isEnabled = true,
-    this.useMargin = false,
-    this.useInBorderRadius = false,
-  });
 
   void onTap() {
     HapticFeedback.vibrate();
@@ -31,8 +30,7 @@ class ElevatedButtonComponent extends StatelessWidget {
   /// [isEnabled] determines if the button is active or disabled, [useMargin] adds a top margin,
   /// and [useInBorderRadius] controls the border radius. The button displays an icon and a
   /// label, with styling based on the current theme's color scheme.
-  Widget build(BuildContext context) {
-    return Container(
+  Widget build(final BuildContext context) => Container(
       margin: useMargin ? EdgeInsets.only(top: AppConstants.margin.h) : null,
       child: ElevatedButton(
         onPressed: isEnabled ? onTap : null,
@@ -43,7 +41,7 @@ class ElevatedButtonComponent extends StatelessWidget {
           disabledForegroundColor: Theme.of(context).colorScheme.onError,
           iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
           disabledIconColor: Theme.of(context).colorScheme.onError,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           shape: RoundedRectangleBorder(
             borderRadius: useInBorderRadius
                 ? BorderRadius.circular(AppConstants.inBorderRadius)
@@ -56,5 +54,4 @@ class ElevatedButtonComponent extends StatelessWidget {
         child: Text(label),
       ),
     );
-  }
 }

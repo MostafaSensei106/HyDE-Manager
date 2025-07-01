@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart' show IconButton, ButtonStyle, Theme;
-import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
+import 'package:flutter/widgets.dart';
+
+import '../../../config/constants/app_constants.dart';
 
 class IconButtonFilledTonalComponent extends StatelessWidget {
+  const IconButtonFilledTonalComponent({
+    required this.icon, required this.onPressed, super.key,
+    this.useInBorderRadius = false,
+    this.color,
+  });
   final bool useInBorderRadius;
   final Color? color;
 
   final IconData icon;
   final VoidCallback onPressed;
-  const IconButtonFilledTonalComponent({
-    super.key,
-    this.useInBorderRadius = false,
-    this.color,
-    required this.icon,
-    required this.onPressed,
-  });
 
   @override
   /// Builds an [IconButton] with a filled tonal style and a rounded rectangle
@@ -28,8 +27,7 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
   /// The [useInBorderRadius] property determines whether to use the
   /// [AppConstants.inBorderRadius] or [AppConstants.outBorderRadius] border
   /// radius for the button.
-  Widget build(BuildContext context) {
-    return IconButton.filledTonal(
+  Widget build(final BuildContext context) => IconButton.filledTonal(
       icon: Icon(icon),
       onPressed: () {
         HapticFeedback.vibrate();
@@ -48,5 +46,4 @@ class IconButtonFilledTonalComponent extends StatelessWidget {
         ),
       ),
     );
-  }
 }

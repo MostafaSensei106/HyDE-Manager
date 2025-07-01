@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart' show MaterialApp, ThemeData;
 import 'package:flutter/widgets.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
-import 'package:hydemanager/core/routing/app_router.dart';
-import 'package:hydemanager/core/routing/routes.dart';
+import 'core/config/constants/app_constants.dart';
+import 'core/routing/app_router.dart';
+import 'core/routing/routes.dart';
 
 class HyDEManager extends StatelessWidget {
+  // ignore: avoid_unused_constructor_parameters
+  HyDEManager(final AppRouter appRouter, {super.key});
   final AppRouter appRouter = AppRouter();
-  HyDEManager(AppRouter appRouter, {super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(final BuildContext context) => MaterialApp(
       title: AppConstants.appName,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
@@ -45,5 +45,4 @@ class HyDEManager extends StatelessWidget {
         Locale('ko', 'KR'),
       ],
     );
-  }
 }

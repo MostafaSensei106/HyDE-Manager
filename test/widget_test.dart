@@ -10,7 +10,7 @@ import 'package:hydemanager/core/routing/app_router.dart';
 import 'package:hydemanager/hyde_manager.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test', (final WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(HyDEManager(AppRouter()));
 

@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart'
     show Theme, Material, Colors, ListTile, InkWell;
-import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
-import 'package:hydemanager/core/config/constants/app_enums.dart';
-import 'package:hydemanager/core/widgets/app_divider_components/full_app_divider_components.dart';
+
+import '../../config/constants/app_constants.dart';
+import '../../config/constants/app_enums.dart';
+import '../app_divider_components/full_app_divider_components.dart';
 
 class ListTileWidgetComponent extends StatelessWidget {
+
+  const ListTileWidgetComponent({
+    required this.leading, required this.title, required this.selected, required this.groupType, super.key,
+    this.subtitle,
+    this.trailing,
+    this.onTap,
+    this.useinBorderRadius = false,
+  });
   final Widget leading;
   final String title;
   final String? subtitle;
@@ -16,18 +25,6 @@ class ListTileWidgetComponent extends StatelessWidget {
   final bool selected;
   final bool useinBorderRadius;
   final ListTileGroupType groupType;
-
-  const ListTileWidgetComponent({
-    super.key,
-    required this.leading,
-    required this.title,
-    this.subtitle,
-    this.trailing,
-    this.onTap,
-    required this.selected,
-    this.useinBorderRadius = false,
-    required this.groupType,
-  });
 
   /// Calculates the border radius for the [ListTile] based on the [ListTileGroupType]
   /// and [useinBorderRadius].
@@ -67,7 +64,7 @@ class ListTileWidgetComponent extends StatelessWidget {
   /// The border radius is configured based on the [groupType] and
   /// [useinBorderRadius] properties, and the background color is set
   /// according to the current theme's color scheme.
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final borderRadius = _getBorderRadius();
     return Container(
       margin: groupType == ListTileGroupType.top
@@ -108,7 +105,6 @@ class ListTileWidgetComponent extends StatelessWidget {
                 horizontalTitleGap: 13,
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 8,
-                  vertical: 0,
                 ),
               ),
             ),

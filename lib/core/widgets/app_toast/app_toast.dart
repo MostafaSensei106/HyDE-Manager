@@ -1,13 +1,12 @@
 import 'package:flutter/widgets.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
-import 'package:hydemanager/core/routing/app_router.dart';
-
 import 'package:toastification/toastification.dart';
 
-class AppToast {
+import '../../config/constants/app_constants.dart';
+import '../../routing/app_router.dart';
+
   /// Shows a toast with the given [message] for a short duration at the bottom
   /// of the screen with a black background and white text.
-  static void showSimpleToast(String message) {
+   void showSimpleToast(final String message) {
     toastification.show(
       style: ToastificationStyle.simple,
       title: Text(message),
@@ -31,7 +30,7 @@ class AppToast {
 
   /// Shows a toast with the given [message] for a long duration at the bottom of
   /// the screen with a red background and white text.
-  static void showErrorToast(String discription) {
+   void showErrorToast(final String discription) {
     toastification.show(
       type: ToastificationType.error,
       style: ToastificationStyle.minimal,
@@ -54,7 +53,7 @@ class AppToast {
     );
   }
 
-  static void showWarningToast(String discription) {
+   void showWarningToast(final String discription) {
     toastification.show(
       type: ToastificationType.warning,
       style: ToastificationStyle.minimal,
@@ -80,7 +79,7 @@ class AppToast {
   /// Shows a toast with the given [message] for a short duration at the bottom
   /// of the screen with a green background and white text.
 
-  static void showSuccessToast(String message) {
+   void showSuccessToast(final String message) {
     toastification.show(
       type: ToastificationType.success,
       style: ToastificationStyle.minimal,
@@ -100,7 +99,7 @@ class AppToast {
     );
   }
 
-  static void showInfoToast(String message) {
+   void showInfoToast(final String message) {
     toastification.show(
       type: ToastificationType.info,
       style: ToastificationStyle.minimal,
@@ -121,4 +120,4 @@ class AppToast {
       showProgressBar: true,
     );
   }
-}
+
