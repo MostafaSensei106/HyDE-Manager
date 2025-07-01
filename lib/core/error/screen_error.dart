@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart' show Material, Colors;
 import 'package:flutter/widgets.dart';
-import 'package:hydemanager/core/widgets/lottie_component/lottie_component.dart';
+import '../widgets/lottie_component/lottie_component.dart';
 
 void errorScreen() {
-  ErrorWidget.builder = (details) {
-    return Material(
+  ErrorWidget.builder = (final details) => Material(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -26,5 +25,4 @@ void errorScreen() {
         ),
       ),
     );
-  };
 }

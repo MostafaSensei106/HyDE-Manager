@@ -3,14 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class LottieComponent extends StatelessWidget {
-  final String lottiePath;
-  final String text;
 
   const LottieComponent({
-    super.key,
-    required this.lottiePath,
-    required this.text,
+    required this.lottiePath, required this.text, super.key,
   });
+  final String lottiePath;
+  final String text;
 
   @override
   /// Returns a [Column] widget with a [Lottie.asset] widget and a [Text]
@@ -18,10 +16,8 @@ class LottieComponent extends StatelessWidget {
   /// given [lottiePath], and a width and height of 200 logical pixels. The
   /// [Text] widget is configured with the given [text], and a font size of
   /// 16 logical pixels, and a color of the primary color of the theme.
-  Widget build(BuildContext context) {
-    return Column(
+  Widget build(final BuildContext context) => Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Lottie.asset(
           lottiePath,
@@ -30,12 +26,11 @@ class LottieComponent extends StatelessWidget {
           fit: BoxFit.cover,
           options: LottieOptions(enableMergePaths: true),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           text,
           // style: AppTextStyle.subtitle(context).copyWith(fontSize: 16.sp),
         ),
       ],
     );
-  }
 }

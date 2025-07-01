@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart' show ColorScheme, Theme;
 import 'package:flutter/widgets.dart';
-import 'package:hydemanager/core/error/no_routes_error.dart';
-import 'package:hydemanager/core/routing/routes.dart';
-import 'package:hydemanager/features/page/main/ui/page/main_page.dart';
+
+import '../../features/page/main/ui/page/main_page.dart';
+import '../error/no_routes_error.dart';
+import 'routes.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -11,12 +12,12 @@ class AppRouter {
   static ColorScheme get theme {
     final context = navigatorKey.currentContext;
     if (context == null) {
-      throw Exception("Navigator context is not available");
+      throw Exception('Navigator context is not available');
     }
     return Theme.of(context).colorScheme;
   }
 
-  Route<dynamic> generateRoute(RouteSettings settings) {
+  Route<dynamic> generateRoute(final RouteSettings settings) {
     Widget page;
     switch (settings.name) {
       case Routes.mainPage:
@@ -35,10 +36,9 @@ class AppRouter {
   /// from the right edge of the screen. The transition duration is set to
   /// 200 milliseconds.
 
-  PageRouteBuilder _createPageRoute(Widget page) {
-    return PageRouteBuilder(
+  PageRouteBuilder _createPageRoute(final Widget page) => PageRouteBuilder(
       transitionDuration: const Duration(milliseconds: 250),
-      pageBuilder: (_, animation, __) => SlideTransition(
+      pageBuilder: (_, final animation, final __) => SlideTransition(
         position: Tween<Offset>(
           begin: const Offset(1, 0),
           end: Offset.zero,
@@ -46,5 +46,4 @@ class AppRouter {
         child: page,
       ),
     );
-  }
 }

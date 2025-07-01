@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart' show TextButton, MaterialTapTargetSize;
-import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
-import 'package:hydemanager/core/config/constants/app_constants.dart';
+import 'package:flutter/widgets.dart';
+
+import '../../../config/constants/app_constants.dart';
 
 class TextButtonIconComponent extends StatelessWidget {
+
+  const TextButtonIconComponent({
+    required this.text, required this.onPressed, super.key,
+    this.isClose = false,
+    this.useInBorderRadius = false,
+  });
   final String text;
   final VoidCallback onPressed;
   final bool isClose;
   final bool useInBorderRadius;
 
-  const TextButtonIconComponent({
-    super.key,
-    required this.text,
-    required this.onPressed,
-    this.isClose = false,
-    this.useInBorderRadius = false,
-  });
-
   @override
-  Widget build(BuildContext context) {
-    return TextButton(
+  Widget build(final BuildContext context) => TextButton(
       onPressed: () {
         HapticFeedback.vibrate();
         onPressed();
@@ -37,5 +35,4 @@ class TextButtonIconComponent extends StatelessWidget {
       ),
       child: Text(text),
     );
-  }
 }

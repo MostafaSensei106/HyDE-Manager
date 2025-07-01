@@ -4,9 +4,8 @@ class NoRoutesError extends StatelessWidget {
   const NoRoutesError({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('No Routes'), centerTitle: true),
+  Widget build(final BuildContext context) => Scaffold(
+      appBar: AppBar(title: const Text('No Routes'), centerTitle: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -47,9 +46,9 @@ class NoRoutesError extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'back',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -61,5 +60,4 @@ class NoRoutesError extends StatelessWidget {
         ),
       ),
     );
-  }
 }

@@ -1,4 +1,3 @@
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class NetworkController {
@@ -8,7 +7,7 @@ class NetworkController {
   /// accordingly. It shows a toast message to the user about the connection type
   /// (e.g. wifi, mobile, ethernet, vpn).
   void initNetworkController() {
-    _connectivity.onConnectivityChanged.listen((results) {
+    _connectivity.onConnectivityChanged.listen((final results) {
       for (var result in results) {
         _updateConnectionStatus(result);
       }
@@ -23,8 +22,8 @@ class NetworkController {
   /// or not. If the device is connected to the internet, the method returns
   /// [true], otherwise it returns [false].
   Future<bool> checkConnection() async {
-    final List<ConnectivityResult> connectivityResult =
-        await (Connectivity().checkConnectivity());
+    final connectivityResult = await (Connectivity()
+        .checkConnectivity());
     if (connectivityResult.contains(ConnectivityResult.none)) {
       return false;
     }
@@ -36,9 +35,8 @@ class NetworkController {
   /// mobile, ethernet, vpn). If the device is not connected to the internet, it
   /// shows an error toast message to the user with the message 'لا يوجد اتصال
   /// بالانترنت'.
-  void _updateConnectionStatus(ConnectivityResult result) async {
+  void _updateConnectionStatus(final ConnectivityResult result) async {
     switch (result) {
-      
       case ConnectivityResult.wifi:
         //AppToast.showToast('الجهاز متصل بالواي فاي');
         break;
